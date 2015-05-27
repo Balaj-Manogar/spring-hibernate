@@ -34,6 +34,18 @@
 		<property name="password" value="${password}" />
 	</bean>
 	
+	<!-- Hibernate configurations -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan" value="org.baali.spring.hibernate.model" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+				<prop key="show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+	
 	<!-- View Resolver -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
