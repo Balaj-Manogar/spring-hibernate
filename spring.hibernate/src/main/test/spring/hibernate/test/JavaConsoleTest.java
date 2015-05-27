@@ -16,7 +16,7 @@ public class JavaConsoleTest
 
 	public static void main(String[] args) throws ParseException
 	{
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
+		ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
 		IEmployee employeeService = (IEmployee) applicationContext.getBean("employeeService");
 		Employees employee = new Employees();
 		employee.setFirstName("Steve");
@@ -45,6 +45,8 @@ public class JavaConsoleTest
 			System.out.println(e.getEmployeeNumber() + " \t" + e.getFirstName() + " "
 					+ e.getLastName());
 		}
+		
+		applicationContext.close();
 
 	}
 }

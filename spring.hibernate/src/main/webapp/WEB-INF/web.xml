@@ -3,5 +3,11 @@
 	      xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	      http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	      version="2.5">
+	      
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/spring-config/global-config.xml</param-value>
+    </context-param>
+    
   <display-name>Archetype Created Web Application</display-name>
 </web-app>
