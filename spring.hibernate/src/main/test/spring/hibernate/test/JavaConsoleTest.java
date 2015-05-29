@@ -19,24 +19,24 @@ public class JavaConsoleTest
 		ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
 		IEmployee employeeService = (IEmployee) applicationContext.getBean("employeeService");
 		Employees employee = new Employees();
-		employee.setFirstName("Steve");
-		employee.setLastName("Jobs");
-		employee.setEmployeeNumber(1234);
+		employee.setFirstName("Bill");
+		employee.setLastName("Gates");
+		employee.setEmployeeNumber(1235);
 		employee.setGender("M");
 
 		SimpleDateFormat hiredSdf = new SimpleDateFormat("yyyy-mm-dd");
-		String dateInString = "1975-05-26";
+		String dateInString = "1976-04-12";
 		Date hiredDate = (Date) hiredSdf.parse(dateInString);
 
 		employee.setHiredDate(hiredDate);
 
 		SimpleDateFormat dobSdf = new SimpleDateFormat("yyyy-mm-dd");
-		String dobDateInString = "1965-02-21";
+		String dobDateInString = "1958-08-11";
 		Date dobDate = (Date) dobSdf.parse(dobDateInString);
 
 		employee.setDob(dobDate);
 		// The commented line creates a new user in database
-		// employeeService.save(employee);
+		//employeeService.save(employee);
 
 		List<Employees> employeesList = employeeService.employeesList();
 
