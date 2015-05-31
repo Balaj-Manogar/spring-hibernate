@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.baali.spring.hibernate.model.Employees;
 
-public interface IPersonService
+public interface IEmployeeService
 {
 	public void addEmployee(Employees employee);
 	public void updateEmployee(Employees employee);

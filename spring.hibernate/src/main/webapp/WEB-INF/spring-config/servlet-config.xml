@@ -53,5 +53,18 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
+	<context:component-scan base-package="org.baali.spring.hibernate.web" />
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	
+	<bean id="employeeServiceDAO" class="org.baali.spring.hibernate.web.dao.EmployeeDAOImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="employeeService" class="org.baali.spring.hibernate.web.service.EmployeeServiceImpl">
+        <property name="employeeDAO" ref="employeeServiceDAO" />
+    </bean>
+	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
 
 </beans>
